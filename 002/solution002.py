@@ -1,5 +1,6 @@
 import sys
 
+
 VOWELS = ("a", "o", "y", "e",
           "u", "i", "A", "O",
           "Y", "E", "U", "I")
@@ -13,7 +14,7 @@ def sokraschatel(word):
             temp += "." + letter
     return temp
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
     for line in sys.stdin:
         print(sokraschatel(line.strip("\n")))
