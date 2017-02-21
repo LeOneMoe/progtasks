@@ -1,0 +1,14 @@
+name:Павел
+surname:Дуров
+age:32
+city:Санкт-Петербург
+-
+name:Алишер
+surname:Усманов
+age:63
+city:Чуст
+-
+name:Питер
+surname:Тиль
+age:49
+city:Франкфурт-на-Майне
