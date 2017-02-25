@@ -6,22 +6,24 @@ PERSON_DELIMITER = '-'
 
 
 def to_json(func):
-    def recoded():
-        func_output = func
+    def wrapper():
+        func_output = func()
         encoded = []
         person_info = {}
 
         for person in func_output:
             for info in person:
                 person_info.update({info[1]: info[0]})
+
             encoded.append(person_info)
             person_info = {}
 
         return json.dumps(encoded, sort_keys=True, indent=4)
 
-    return recoded()
+    return wrapper
 
 
+@to_json
 def retrieve_data():
 
     persons = []
@@ -44,9 +46,5 @@ def retrieve_data():
     return persons
 
 
-new_retrieve_data = to_json(retrieve_data())
-
-
 if __name__ == '__main__':
     print(retrieve_data())
-    print(new_retrieve_data)
